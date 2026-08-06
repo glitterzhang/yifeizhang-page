@@ -26,69 +26,102 @@
     </button>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
+      <li><a href="#news">News</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#awards">Awards</a></li>
-      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 </header>
 
-<main>
+<!-- ============================================================
+     左右两栏布局：左边身份信息 + About，右边内容
+     ============================================================ -->
+<div class="page-shell container" id="top">
 
-  <!-- ============================================================
-       Hero 头图区
-       ============================================================ -->
-  <section class="hero" id="top">
-    <div class="container">
-
-      <!-- 头像：目前是用姓名首字母做的占位圆圈。
-           等你有照片了，把下面这一整个 div 换成：
-           <div class="avatar"><img src="assets/profile.jpg" alt="Yifei Zhang"></div> -->
-      <div class="avatar">YZ</div>
-
-      <div class="hero-text">
-        <h1>Yifei Zhang</h1>
-        <p class="hero-title">Ph.D. in Operations Research &amp; Industrial Engineering · The Ohio State University</p>
-        <div class="hero-links">
-          <!-- 把下面的 # 换成你自己的实际链接 -->
-          <a href="mailto:yifeizhang5387@gmail.com">Email</a>
-          <a href="#" target="_blank" rel="noopener">GitHub</a>
-          <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="#" target="_blank" rel="noopener">Google Scholar</a>
-          <a href="#" target="_blank" rel="noopener">CV (PDF)</a>
-        </div>
-      </div>
-
+  <!-- 左边：头像、姓名、职位/单位、Email、链接 -->
+  <aside class="page-sidebar">
+    <div class="avatar"><img src="assets/profile.jpg" alt="Yifei Zhang"></div>
+    <h1>Yifei Zhang</h1>
+    <p class="hero-title">
+      Visiting Research Fellow<br>
+      Dept. of Integrated Systems Engineering<br>
+      The Ohio State University<br>
+      Columbus, OH
+    </p>
+    <div class="hero-links">
+      <!-- 把下面的 # 换成你自己的实际链接 -->
+      <button type="button" class="email-copy" data-email="zhangyifeiosu@gmail.com">Email</button>
+      <a href="https://scholar.google.com/citations?user=QmUA1OAAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      <a href="https://github.com/glitterzhang" target="_blank" rel="noopener">GitHub</a>
+      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
     </div>
-  </section>
+  </aside>
 
-  <!-- ============================================================
-       About / Summary
-       ============================================================ -->
-  <section id="about">
-    <div class="container">
+  <!-- 右边：About + Research Interests + News，下面再接 Education / Projects / Contact -->
+  <main class="page-main">
+
+    <!-- ============================================================
+         About
+         ============================================================ -->
+    <section id="about">
       <h2>About</h2>
       <p class="summary-text">
-        Yifei Zhang is a Ph.D. in Operations Research &amp; Industrial Engineering from The Ohio State
-        University, working at the intersection of optimization, machine learning, reinforcement
-        learning, and computer vision, with applications in manufacturing automation and autonomous
-        decision-making. She previously worked as a Data Scientist at Siemens Mobility and Verizon,
-        building and deploying end-to-end machine learning pipelines for industrial and telecom
-        applications. She has authored several peer-reviewed publications, holds 4 patents in
-        vision-based inspection, predictive maintenance, and industrial machine learning, and mentors
-        graduate students and junior data scientists in algorithm development and deployment.
+        Yifei Zhang received her Ph.D. in Operations Research &amp; Industrial Engineering from The
+        Ohio State University in 2025. She is currently a Visiting Research Fellow there, working with
+        Professor Theodore T. (Ted) Allen, at the intersection of optimization, machine learning,
+        reinforcement learning, and computer vision.
       </p>
-    </div>
-  </section>
+      <p class="summary-text">
+        IEEE Senior Member, Institute of Electrical and Electronics Engineers.
+      </p>
 
-  <!-- ============================================================
-       Education
-       ============================================================ -->
-  <section id="education">
-    <div class="container">
+      <div class="pub-group">
+        <h3>Research Interests</h3>
+        <p class="summary-text">
+          Nonlinear optimization, reinforcement learning, efficient global optimization for image
+          processing and combinatorial decision-making problems, and LLMs for operations research.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         News —— 发表的期刊论文 + 参加的 talk，按时间倒序
+         ============================================================ -->
+    <section id="news">
+      <h2>News</h2>
+
+      <ul class="news-list">
+        <li><span class="news-date">2026</span> Paper accepted: "Automated Vision-Based Dimensional
+          Inspection in Car Body Assembly Line with Image Sequence Processing." <span class="venue">International
+          Journal of Production Research (IJPR)</span>.</li>
+        <li><span class="news-date">2026</span> Published "Quality Inspection Experimentation on Image
+          Processing with CPUs and GPUs: A Case Study." <span class="venue">Recent Advances in
+          Industrial and Systems Engineering</span>, Lecture Notes on Multidisciplinary Industrial
+          Engineering, Springer, Singapore.</li>
+        <li><span class="news-date">2025</span> Gave a talk, "Optimization and Learning Methods Applied
+          to Automated Vision-Based Body-in-White Dimensional Inspections," at the 2025 INFORMS Annual
+          Meeting, Atlanta, GA.</li>
+        <li><span class="news-date">2024</span> Published "Exploratory Image Data Analysis for Quality
+          Improvement Hypothesis Generation." <span class="venue">Quality Engineering</span> 36.4
+          (2024): 693–712.</li>
+        <li><span class="news-date">2024</span> Co-authored talk, "Vision System Using MDP-Based
+          Tracking to Create Body-in-White Dimension Control Charts in Automotive Quality," at the 2024
+          INFORMS Annual Meeting, Seattle, WA.</li>
+        <li><span class="news-date">2024</span> Gave a talk, "Quality Inspection Experimentation on
+          Image Processing with CPUs and GPUs: A Case Study," at the International Conference on
+          Industrial Engineering &amp; Analytics, IIT Kharagpur, India.</li>
+        <li><span class="news-date">2023</span> Gave a talk, "Exploratory Image Data Analysis for
+          Quality Improvement Hypothesis Generation," at the 2023 INFORMS Annual Meeting, Phoenix, AZ.</li>
+      </ul>
+
+      <!-- 新增一条 news：复制上面任意一个 <li> 整块，改文字内容即可 -->
+    </section>
+
+    <!-- ============================================================
+         Education
+         ============================================================ -->
+    <section id="education">
       <h2>Education</h2>
 
       <div class="entry">
@@ -101,11 +134,9 @@
         </div>
         <p class="note">
           Advisor: Prof. Theodore T. Allen<br>
-          Research interests: nonlinear optimization, reinforcement learning (RL), and efficient global
-          optimization for image processing and combinatorial decision-making problems.<br>
           Dissertation: <em>Optimization and Learning Methods Applied to Automated Vision-Based
           Body-in-White Dimensional Inspections</em> —
-          <a href="http://rave.ohiolink.edu/etdc/view?acc_num=osu1735857139762797" target="_blank" rel="noopener">OhioLINK</a>
+          <a href="https://etd.ohiolink.edu/acprod/odb_etd/etd/r/1501/10?clear=10&amp;p10_accession_num=osu1735857139762797" target="_blank" rel="noopener">OhioLINK</a>
         </p>
       </div>
 
@@ -130,307 +161,45 @@
       </div>
 
       <!-- 新增一条学历：复制上面任意一个 .entry 整块，改文字内容即可 -->
-    </div>
-  </section>
+    </section>
 
-  <!-- ============================================================
-       Professional Experience
-       ============================================================ -->
-  <section id="experience">
-    <div class="container">
-      <h2>Professional Experience</h2>
+    <!-- ============================================================
+         Experience —— 只列 title / 机构 / 时间 / 地点，不写描述
+         ============================================================ -->
+    <section id="experience">
+      <h2>Experience</h2>
 
-      <div class="entry">
-        <div class="entry-head">
-          <div>
-            <div class="entry-org">The Ohio State University</div>
-            <div class="entry-role">Visiting Research Fellow</div>
-          </div>
-          <div class="entry-date">Jan 2025 – Present<br><span class="entry-loc">Columbus, OH</span></div>
-        </div>
-        <ul>
-          <li>Lead multiple applied research projects spanning optimization, large language models, and
-            heuristic algorithms, from methodology development through manuscript preparation and
-            commercialization.</li>
-          <li>Mentor graduate students on algorithm development and deployment.</li>
-        </ul>
-      </div>
+      <ul class="project-titles">
+        <li><span class="entry-org">Visiting Research Fellow, The Ohio State University</span> <span class="entry-date">Jan 2025 – Present &middot; Columbus, OH</span></li>
+        <li><span class="entry-org">Graduate Research Associate, The Ohio State University</span> <span class="entry-date">Dec 2021 – Jan 2025 &middot; Columbus, OH</span></li>
+        <li><span class="entry-org">Data Scientist, Siemens Mobility</span> <span class="entry-date">Jan 2019 – Jun 2022 &middot; Beijing, China</span></li>
+        <li><span class="entry-org">Data Scientist – Predictive Modeler (Contractor), Verizon</span> <span class="entry-date">Apr 2018 – Dec 2018 &middot; Columbus, OH</span></li>
+        <li><span class="entry-org">Supply Chain – Data Analyst, Sandvik Hyperion</span> <span class="entry-date">Apr 2017 – Apr 2018 &middot; Columbus, OH</span></li>
+      </ul>
 
-      <div class="entry">
-        <div class="entry-head">
-          <div>
-            <div class="entry-org">The Ohio State University</div>
-            <div class="entry-role">Graduate Research Associate</div>
-          </div>
-          <div class="entry-date">Dec 2021 – Jan 2025<br><span class="entry-loc">Columbus, OH</span></div>
-        </div>
-        <ul>
-          <li>Directed software and algorithm development for multiple funded industry-sponsored
-            projects with Honda, ROSEN Group, and NetJets, and medical analytics projects at OSU.</li>
-          <li>Built and deployed a production computer-vision inspection system and a
-            genetic-algorithm-based crew scheduling system, combining machine learning, optimization,
-            and statistical process control. (See <a href="#projects">Projects</a>.)</li>
-          <li>Applied machine learning to biomedical signal analysis, developing classification models
-            for EEG-based stimulus-response prediction.</li>
-        </ul>
-      </div>
+      <!-- 新增一段工作经历：复制上面任意一个 <li> 整块，改文字内容即可 -->
+    </section>
 
-      <div class="entry">
-        <div class="entry-head">
-          <div>
-            <div class="entry-org">Siemens Mobility</div>
-            <div class="entry-role">Data Scientist</div>
-          </div>
-          <div class="entry-date">Jan 2019 – Jun 2022<br><span class="entry-loc">Beijing, China</span></div>
-        </div>
-        <ul>
-          <li>Led cross-functional data science initiatives to build digital intelligence platforms
-            from the ground up for railway operations and maintenance, deployed for Shanghai Metro and
-            the Hong Kong OGCIO. (See <a href="#projects">Projects</a>.)</li>
-          <li>Developed machine learning and signal-processing models for anomaly detection, fault
-            diagnosis, and remaining-useful-life prediction, and designed the underlying data
-            architecture and ETL pipelines for production deployment.</li>
-          <li>Built traffic-speed estimation and prediction models and an NLP pipeline for incident
-            classification from unstructured text.</li>
-        </ul>
-        <p class="note">3 patents</p>
-      </div>
-
-      <div class="entry">
-        <div class="entry-head">
-          <div>
-            <div class="entry-org">Verizon</div>
-            <div class="entry-role">Data Scientist – Predictive Modeler (Contractor)</div>
-          </div>
-          <div class="entry-date">Apr 2018 – Dec 2018<br><span class="entry-loc">Columbus, OH</span></div>
-        </div>
-        <ul>
-          <li>Built predictive and anomaly-detection models to forecast customer charges and flag
-            suspicious billing patterns.</li>
-        </ul>
-      </div>
-
-      <div class="entry">
-        <div class="entry-head">
-          <div>
-            <div class="entry-org">Sandvik Hyperion</div>
-            <div class="entry-role">Supply Chain – Data Analyst</div>
-          </div>
-          <div class="entry-date">Apr 2017 – Apr 2018<br><span class="entry-loc">Columbus, OH</span></div>
-        </div>
-        <ul>
-          <li>Developed demand-forecasting and production-scheduling models and optimization-based
-            blending algorithms for finished goods, and built KPI dashboards to monitor and optimize
-            inventory.</li>
-        </ul>
-      </div>
-
-      <!-- 新增一段工作经历：复制上面任意一个 .entry 整块，改文字内容即可 -->
-    </div>
-  </section>
-
-  <!-- ============================================================
-       Projects
-       ============================================================ -->
-  <section id="projects">
-    <div class="container">
+    <!-- ============================================================
+         Projects
+         ============================================================ -->
+    <section id="projects">
       <h2>Projects</h2>
 
-      <div class="entry">
-        <div class="entry-head">
-          <div class="entry-org">Automated Vision-Based Dimensional Inspection System</div>
-          <div class="entry-date">Honda &middot; OSU</div>
-        </div>
-        <p class="note">
-          Designed and deployed an end-to-end computer-vision system (edge detection, ROI extraction,
-          pretrained ResNet, regression, RL-SAC, optimal transport) to measure body-in-white gap/flush
-          dimensions on the assembly line, with Bayesian-optimized image processing and EWMA/Hotelling
-          control charts for statistical monitoring.
-        </p>
-      </div>
-
-      <div class="entry">
-        <div class="entry-head">
-          <div class="entry-org">NetJets Crew Scheduling</div>
-          <div class="entry-date">OSU &amp; NetJets</div>
-        </div>
-        <p class="note">
-          Developed genetic algorithms with novelty encoding and a multi-fidelity, ML-accelerated
-          fitness evaluation to solve large-scale crew scheduling problems under hard operational
-          constraints.
-        </p>
-      </div>
-
-      <div class="entry">
-        <div class="entry-head">
-          <div class="entry-org">LLM-Driven Optimization Problem Formulation</div>
-          <div class="entry-date">OSU</div>
-        </div>
-        <p class="note">
-          Built an LLM-based framework that converts natural-language problem descriptions into formal
-          optimization models (decision variables, objectives, constraints), including a new scoring
-          metric for formulation accuracy, completeness, and feasibility.
-        </p>
-      </div>
-
-
-      <div class="entry">
-        <div class="entry-head">
-          <div class="entry-org">Shanghai Metro Digital Intelligence O&amp;M System</div>
-          <div class="entry-date">Siemens Mobility</div>
-        </div>
-        <p class="note">
-          Built a digital intelligence platform from the ground up for railway operations and
-          maintenance, covering anomaly detection, fault diagnosis, and remaining-useful-life
-          prediction.
-        </p>
-      </div>
-
-      <div class="entry">
-        <div class="entry-head">
-          <div class="entry-org">Traffic Data Analysis System</div>
-          <div class="entry-date">Hong Kong OGCIO &middot; Siemens Mobility</div>
-        </div>
-        <p class="note">
-          Developed traffic-speed estimation and prediction models for road segments without sensors,
-          incorporating weather and incident effects, with an NLP pipeline for incident classification.
-        </p>
-      </div>
-
-      <div class="entry">
-        <div class="entry-head">
-          <div class="entry-org">EEG-Based Stimulus Response Classification</div>
-          <div class="entry-date">OSU</div>
-        </div>
-        <p class="note">
-          Developed tree-based (random forest, XGBoost, CatBoost) and SVM classification models to
-          predict stimulus response from brain EEG signals.
-        </p>
-      </div>
-
-      <!-- 新增一个项目：复制上面任意一个 .entry 整块，改文字内容即可 -->
-    </div>
-  </section>
-
-  <!-- ============================================================
-       Publications, Peer Review, Patents, Current Work, Talks
-       ============================================================ -->
-  <section id="publications">
-    <div class="container">
-      <h2>Publications</h2>
-
-      <div class="pub-group">
-        <h3>Peer-Reviewed Papers</h3>
-        <ol class="pub-list">
-          <li>Zhang, Yifei, Theodore T. Allen, and Ramiro Rodriguez Buno. "Automated Vision-Based
-            Dimensional Inspection in Car Body Assembly Line with Image Sequence Processing." Accepted
-            (2026), <span class="venue">International Journal of Production Research (IJPR)</span>.</li>
-          <li>Zhang, Yifei, Theodore T. Allen, and Ramiro Rodriguez Buno. "Exploratory Image Data
-            Analysis for Quality Improvement Hypothesis Generation." <span class="venue">Quality
-            Engineering</span> 36.4 (2024): 693–712.</li>
-          <li>Zhang, Y., Rodriguez Buno, R., Lin, C.Y., Tsai, Y.K., Allen, T.T. (2026). "Quality
-            Inspection Experimentation on Image Processing with CPUs and GPUs: A Case Study." <span class="venue">Recent
-            Advances in Industrial and Systems Engineering</span>, Lecture Notes on Multidisciplinary
-            Industrial Engineering, Springer, Singapore.
-            <a href="https://doi.org/10.1007/978-981-96-8323-9_19" target="_blank" rel="noopener">doi.org/10.1007/978-981-96-8323-9_19</a></li>
-        </ol>
-      </div>
-
-      <div class="pub-group">
-        <h3>Peer Review Service</h3>
-        <ol class="pub-list">
-          <li>Ad-hoc Reviewer, CAIE (2 manuscripts reviewed).</li>
-        </ol>
-      </div>
-
-      <div class="pub-group">
-        <h3>Patents</h3>
-        <ol class="pub-list">
-          <li>Zhang, Yifei, Theodore T. Allen, and Ramiro Rodriguez Buno. "Automatic vision system and
-            method for measuring and inspecting gap and flush in vehicle assembly line." Ohio State
-            Innovation Foundation. PCT Application
-            <a href="https://patents.google.com/patent/WO2026090379A1/en" target="_blank" rel="noopener">WO2026090379A1</a>
-            (published Apr 2026; priority Oct 2024).</li>
-          <li>Zhang, Yifei, Jie Zheng, and Nicholas Michael Hansen. "Fault prediction model establishing
-            method and train system fault prediction method and device." Siemens Mobility Technologies
-            (Beijing) Co., Ltd. Chinese Patent
-            <a href="https://patents.google.com/patent/CN114604299A/en" target="_blank" rel="noopener">CN114604299A</a>
-            (granted July 2023).</li>
-          <li>Zhang, Yifei, Jie Zheng, and Nicholas Michael Hansen. "Training method of fault prediction
-            model, and train system fault prediction method and device." Siemens Mobility Technologies
-            (Beijing) Co., Ltd. Chinese Patent
-            <a href="https://patents.google.com/patent/CN114611561A/en" target="_blank" rel="noopener">CN114611561A</a>
-            (granted May 2023).</li>
-          <li>Zhang, Yifei, Jie Zheng, and Sanfeng Han. "Fault diagnosis method, device and system for
-            train traction motor and readable medium." Siemens Mobility Technologies (Beijing) Co.,
-            Ltd. Chinese Patent
-            <a href="https://patents.google.com/patent/CN112362368A/en" target="_blank" rel="noopener">CN112362368A</a>
-            (published Feb 2021, granted June 2021).</li>
-        </ol>
-      </div>
-
-      <div class="pub-group">
-        <h3>Current Work (in progress)</h3>
-        <ol class="pub-list">
-          <li>Large Language Models for Optimization Formulation and Design of Experiments.</li>
-          <li>Unsupervised Visual Tracking with Optimal Transport and Reinforcement Learning.</li>
-          <li>Dynamic Task Scheduling with Reinforcement Learning.</li>
-        </ol>
-      </div>
-
-      <div class="pub-group">
-        <h3>Conferences &amp; Talks</h3>
-        <ol class="pub-list">
-          <li>"Optimization and Learning Methods Applied to Automated Vision-Based Body-in-White
-            Dimensional Inspections." Yifei Zhang, Theodore T. Allen, Ramiro Rodriguez Buno. 2025
-            INFORMS Annual Meeting, Atlanta, GA, USA, Oct 26–29, 2025.</li>
-          <li>"Vision System Using MDP-Based Tracking to Create Body-in-White Dimension Control Charts
-            in Automotive Quality." Ramiro Rodriguez Buno, Yifei Zhang, Theodore T. Allen. 2024 INFORMS
-            Annual Meeting, Seattle, WA, USA, Oct 20–23, 2024.</li>
-          <li>"Exploratory Image Data Analysis for Quality Improvement Hypothesis Generation." Yifei
-            Zhang, Theodore T. Allen, Ramiro Rodriguez Buno. 2023 INFORMS Annual Meeting, Phoenix, AZ,
-            USA, Oct 15–18, 2023.</li>
-          <li>"Quality Inspection Experimentation on Image Processing with CPUs and GPUs: A Case
-            Study." Yifei Zhang, Ramiro Rodriguez Buno, Chih-Yin Lin, Yuan-Ke Tsai, Theodore T. Allen.
-            International Conference on Industrial Engineering &amp; Analytics, IIT Kharagpur, India,
-            Feb 16–18, 2024.</li>
-        </ol>
-      </div>
-
-      <!-- 新增一篇论文/专利/报告：复制对应 <li> 并修改内容即可 -->
-    </div>
-  </section>
-
-  <!-- ============================================================
-       Honors, Awards & Certifications
-       ============================================================ -->
-  <section id="awards">
-    <div class="container">
-      <h2>Honors, Awards &amp; Certifications</h2>
-      <ul class="award-list">
-        <li><span>IEEE Senior Member, Institute of Electrical and Electronics Engineers</span><span class="award-year">2025</span></li>
-        <li><span>ISE Graduate Scholarship, The Ohio State University</span><span class="award-year">2022 – 2025</span></li>
-        <li><span>Innovation Driven by Design Thinking Certification, Siemens</span><span class="award-year">2021</span></li>
-        <li><span>Lean Product Development with Scrum Certification, Siemens</span><span class="award-year">2021</span></li>
-        <li><span>Basic &amp; Advanced Certification of SAS, SAS Institute, USA</span><span class="award-year">2016</span></li>
+      <ul class="project-titles">
+        <li><span class="entry-org">LLM-Driven Optimization Problem Formulation</span> <span class="entry-date">OSU &middot; in progress</span></li>
+        <li><span class="entry-org">Automated Vision-Based Dimensional Inspection System</span> <span class="entry-date">Honda &middot; OSU</span></li>
+        <li><span class="entry-org">NetJets Crew Scheduling</span> <span class="entry-date">OSU &amp; NetJets</span></li>
+        <li><span class="entry-org">Shanghai Metro Digital Intelligence O&amp;M System</span> <span class="entry-date">Siemens Mobility</span></li>
+        <li><span class="entry-org">Traffic Data Analysis System</span> <span class="entry-date">Hong Kong OGCIO &middot; Siemens Mobility</span></li>
+        <li><span class="entry-org">EEG-Based Stimulus Response Classification</span> <span class="entry-date">OSU</span></li>
       </ul>
-    </div>
-  </section>
 
-  <!-- ============================================================
-       Contact
-       ============================================================ -->
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p class="contact-text">
-        Feel free to reach out via email at
-        <a href="mailto:yifeizhang5387@gmail.com">yifeizhang5387@gmail.com</a>.
-      </p>
-    </div>
-  </section>
+      <!-- 新增一个项目：复制上面任意一个 <li> 整块，改文字内容即可 -->
+    </section>
 
-</main>
+  </main>
+</div>
 
 <footer class="site-footer">
   <div class="container">

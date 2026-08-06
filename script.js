@@ -1,3 +1,30 @@
+// 点击 Email 按钮复制邮箱地址到剪贴板
+const emailBtn = document.querySelector(".email-copy");
+if (emailBtn) {
+  emailBtn.addEventListener("click", async () => {
+    const email = emailBtn.dataset.email;
+    try {
+      await navigator.clipboard.writeText(email);
+    } catch (err) {
+      const textarea = document.createElement("textarea");
+      textarea.value = email;
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+    }
+    const original = emailBtn.textContent;
+    emailBtn.textContent = "Copied!";
+    emailBtn.classList.add("copied");
+    setTimeout(() => {
+      emailBtn.textContent = original;
+      emailBtn.classList.remove("copied");
+    }, 1500);
+  });
+}
+
 // 移动端导航折叠
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");

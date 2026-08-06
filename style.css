@@ -14,7 +14,8 @@
   --font-sans: "Inter", "Noto Sans SC", -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
 
-  --max-width: 860px;
+  --max-width: 1120px;
+  --content-width: 780px;
   --section-gap: 4.5rem;
 }
 
@@ -114,17 +115,27 @@ a:hover {
 }
 
 /* ============================================================
-   Hero 头图区
+   左右两栏布局：左边身份信息 + About，右边正文内容
    ============================================================ */
-.hero {
-  padding: 4.5rem 0 3.5rem;
+.page-shell {
+  display: flex;
+  align-items: flex-start;
+  gap: 3.5rem;
+  padding-top: 3.5rem;
 }
 
-.hero .container {
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-  flex-wrap: wrap;
+.page-sidebar {
+  flex: 0 0 260px;
+  position: sticky;
+  top: 5.5rem;
+  padding-right: 2.5rem;
+  border-right: 1px solid var(--border);
+}
+
+.page-main {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: var(--content-width);
 }
 
 .avatar {
@@ -141,6 +152,7 @@ a:hover {
   font-size: 2.2rem;
   color: var(--accent);
   overflow: hidden;
+  margin-bottom: 1.3rem;
 }
 .avatar img {
   width: 100%;
@@ -148,40 +160,51 @@ a:hover {
   object-fit: cover;
 }
 
-.hero-text h1 {
+.page-sidebar h1 {
   font-family: var(--font-serif);
-  font-size: 2.3rem;
+  font-size: 1.9rem;
   margin: 0 0 0.35rem;
   font-weight: 600;
 }
 
 .hero-title {
   color: var(--muted);
-  font-size: 1.05rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
   margin: 0 0 1rem;
 }
 
 .hero-links {
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  align-items: center;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: flex-start;
 }
 
-.hero-links a {
+.hero-links a,
+.hero-links button.email-copy {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
   font-size: 0.92rem;
+  font-family: inherit;
   color: var(--text);
+  background: none;
   border: 1px solid var(--border);
   padding: 0.4rem 0.75rem;
   border-radius: 999px;
+  cursor: pointer;
 }
-.hero-links a:hover {
+.hero-links a:hover,
+.hero-links button.email-copy:hover {
   border-color: var(--accent);
   color: var(--accent);
   text-decoration: none;
+}
+.hero-links button.email-copy.copied {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
 }
 
 /* ============================================================
@@ -193,7 +216,12 @@ section {
   scroll-margin-top: 4.5rem;
 }
 
-section > .container > h2 {
+.page-main > section:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+section h2 {
   font-family: var(--font-serif);
   font-size: 1.5rem;
   margin: 0 0 1.5rem;
@@ -260,7 +288,50 @@ section > .container > h2 {
 }
 
 /* ============================================================
-   Publications
+   Projects（只列标题）
+   ============================================================ */
+.project-titles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.project-titles li {
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.project-titles li:last-child {
+  border-bottom: none;
+}
+
+/* ============================================================
+   News
+   ============================================================ */
+.news-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.news-list li {
+  padding: 0.7rem 0;
+  border-bottom: 1px dashed var(--border);
+  color: var(--text);
+}
+.news-list li:last-child {
+  border-bottom: none;
+}
+.news-date {
+  font-weight: 600;
+  color: var(--accent);
+  margin-right: 0.5rem;
+}
+
+/* ============================================================
+   Research Interests（About 内的子板块）
    ============================================================ */
 .pub-group h3 {
   font-family: var(--font-serif);
@@ -272,55 +343,13 @@ section > .container > h2 {
   margin-top: 0;
 }
 
-ol.pub-list {
-  margin: 0;
-  padding-left: 1.4rem;
-}
-ol.pub-list li {
-  margin-bottom: 0.8rem;
-}
-ol.pub-list .venue {
+.venue {
   font-style: italic;
 }
-ul.pub-sublist {
-  margin: 0.35rem 0 0;
-  padding-left: 1.2rem;
-  font-size: 0.95rem;
-  color: var(--muted);
-}
 
 /* ============================================================
-   Awards
+   Footer
    ============================================================ */
-.award-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.award-list li {
-  padding: 0.5rem 0;
-  border-bottom: 1px dashed var(--border);
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-.award-list li:last-child {
-  border-bottom: none;
-}
-.award-year {
-  color: var(--muted);
-  font-size: 0.9rem;
-  white-space: nowrap;
-}
-
-/* ============================================================
-   Contact / Footer
-   ============================================================ */
-.contact-text {
-  color: var(--muted);
-}
-
 .site-footer {
   text-align: center;
   padding: 2.5rem 0;
@@ -334,6 +363,29 @@ ul.pub-sublist {
 /* ============================================================
    响应式
    ============================================================ */
+@media (max-width: 900px) {
+  .page-shell {
+    flex-direction: column;
+    gap: 2.5rem;
+    padding-top: 2.5rem;
+  }
+  .page-sidebar {
+    position: static;
+    flex-basis: auto;
+    width: 100%;
+    text-align: center;
+  }
+  .page-sidebar .avatar {
+    margin: 0 auto 1.2rem;
+  }
+  .hero-links {
+    align-items: center;
+  }
+  .page-main {
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 640px) {
   .nav-links {
     position: absolute;
@@ -356,17 +408,6 @@ ul.pub-sublist {
   }
   .nav-toggle {
     display: block;
-  }
-  .hero {
-    padding-top: 3rem;
-  }
-  .hero .container {
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-  }
-  .hero-links {
-    justify-content: center;
   }
   .entry-head {
     flex-direction: column;
