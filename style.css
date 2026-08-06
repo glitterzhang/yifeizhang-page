@@ -2,13 +2,13 @@
    Global variables — change colors/fonts here
    ============================================================ */
 :root {
-  --bg: #fdfcfa;
-  --bg-alt: #f6f3ee;
-  --text: #22201d;
-  --muted: #625d56;
-  --border: #e5e0d8;
-  --accent: #8c2f2f;       /* primary accent: muted dark red */
-  --accent-soft: #f3e7e2;  /* light tint of the accent, for tag backgrounds */
+  --bg: #ffffff;
+  --bg-alt: #eaf2fb;
+  --text: #232323;
+  --muted: #6b7280;
+  --border: #dae6f5;
+  --accent: #17588f;       /* primary accent: deep sky blue, for contrast against the light tint */
+  --accent-soft: #d8e9fa;  /* light tint of the accent, for tag backgrounds */
 
   --font-serif: "Lora", "Noto Serif SC", Georgia, "Times New Roman", serif;
   --font-sans: "Inter", "Noto Sans SC", -apple-system, BlinkMacSystemFont,
@@ -120,16 +120,19 @@ a:hover {
 .page-shell {
   display: flex;
   align-items: flex-start;
-  gap: 3.5rem;
+  gap: 2.75rem;
   padding-top: 3.5rem;
 }
 
 .page-sidebar {
-  flex: 0 0 260px;
+  flex: 0 0 280px;
   position: sticky;
   top: 5.5rem;
-  padding-right: 2.5rem;
-  border-right: 1px solid var(--border);
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 3rem 2rem 3.5rem;
+  text-align: center;
 }
 
 .page-main {
@@ -152,7 +155,7 @@ a:hover {
   font-size: 2.2rem;
   color: var(--accent);
   overflow: hidden;
-  margin-bottom: 1.3rem;
+  margin: 0 auto 1.3rem;
 }
 .avatar img {
   width: 100%;
@@ -170,28 +173,32 @@ a:hover {
 .hero-title {
   color: var(--muted);
   font-size: 0.92rem;
-  line-height: 1.5;
-  margin: 0 0 1rem;
+  line-height: 1.6;
+  margin: 0 0 1.2rem;
+}
+.hero-title strong {
+  color: var(--text);
+  font-weight: 700;
 }
 
 .hero-links {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-  align-items: flex-start;
 }
 
 .hero-links a,
 .hero-links button.email-copy {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 0.4rem;
+  justify-content: center;
+  width: 100%;
   font-size: 0.92rem;
   font-family: inherit;
   color: var(--text);
   background: none;
   border: 1px solid var(--border);
-  padding: 0.4rem 0.75rem;
+  padding: 0.5rem 0.75rem;
   border-radius: 999px;
   cursor: pointer;
 }
@@ -246,7 +253,7 @@ section h2 {
 .entry-head {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   flex-wrap: wrap;
   gap: 0.25rem 1rem;
 }
@@ -260,6 +267,10 @@ section h2 {
   color: var(--muted);
   font-size: 0.9rem;
 }
+#education .entry-loc {
+  color: var(--text);
+  font-weight: 700;
+}
 
 .entry-role {
   color: var(--accent);
@@ -268,10 +279,22 @@ section h2 {
   margin-top: 0.15rem;
 }
 
+.entry-minor {
+  color: var(--text);
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+}
+
 .entry-date {
   color: var(--muted);
   font-size: 0.9rem;
   white-space: nowrap;
+}
+#education .entry-date {
+  color: var(--text);
+  font-weight: 700;
+  text-align: center;
+  flex: 0 0 150px;
 }
 
 .entry ul {
@@ -283,7 +306,7 @@ section h2 {
 }
 .entry p.note {
   margin: 0.5rem 0 0;
-  color: var(--muted);
+  color: var(--text);
   font-size: 0.95rem;
 }
 
@@ -316,18 +339,55 @@ section h2 {
   margin: 0;
   padding: 0;
 }
-.news-list li {
-  padding: 0.7rem 0;
+.news-item {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.4rem 0;
   border-bottom: 1px dashed var(--border);
-  color: var(--text);
 }
-.news-list li:last-child {
+.news-item:first-child {
+  padding-top: 0;
+}
+.news-item:last-child {
   border-bottom: none;
 }
-.news-date {
-  font-weight: 600;
+.news-year {
+  flex: 0 0 3rem;
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 700;
   color: var(--accent);
-  margin-right: 0.5rem;
+}
+.news-content {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.news-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  margin-bottom: 0.6rem;
+}
+.news-title {
+  font-family: var(--font-sans);
+  font-size: 1.03rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 0.3rem;
+  line-height: 1.4;
+}
+.news-venue {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin: 0;
 }
 
 /* ============================================================
@@ -345,6 +405,23 @@ section h2 {
 
 .venue {
   font-style: italic;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  font-size: 0.92rem;
+  font-weight: 500;
 }
 
 /* ============================================================
