@@ -1,5 +1,5 @@
 /* ============================================================
-   全局变量 —— 想改配色/字体，只改这里就够了
+   Global variables — change colors/fonts here
    ============================================================ */
 :root {
   --bg: #fdfcfa;
@@ -7,8 +7,8 @@
   --text: #22201d;
   --muted: #625d56;
   --border: #e5e0d8;
-  --accent: #8c2f2f;       /* 主色调：低饱和暗红，学术、克制 */
-  --accent-soft: #f3e7e2;  /* 主色调的浅底色，用于标签背景 */
+  --accent: #8c2f2f;       /* primary accent: muted dark red */
+  --accent-soft: #f3e7e2;  /* light tint of the accent, for tag backgrounds */
 
   --font-serif: "Lora", "Noto Serif SC", Georgia, "Times New Roman", serif;
   --font-sans: "Inter", "Noto Sans SC", -apple-system, BlinkMacSystemFont,
@@ -52,7 +52,7 @@ a:hover {
 }
 
 /* ============================================================
-   导航栏
+   Nav bar
    ============================================================ */
 .site-header {
   position: sticky;
@@ -115,7 +115,7 @@ a:hover {
 }
 
 /* ============================================================
-   左右两栏布局：左边身份信息 + About，右边正文内容
+   Two-column layout: identity + About on the left, content on the right
    ============================================================ */
 .page-shell {
   display: flex;
@@ -208,7 +208,7 @@ a:hover {
 }
 
 /* ============================================================
-   通用 Section 样式
+   Generic section styles
    ============================================================ */
 section {
   padding: 2.5rem 0;
@@ -288,7 +288,7 @@ section h2 {
 }
 
 /* ============================================================
-   Projects（只列标题）
+   Projects (titles only)
    ============================================================ */
 .project-titles {
   list-style: none;
@@ -331,7 +331,7 @@ section h2 {
 }
 
 /* ============================================================
-   Research Interests（About 内的子板块）
+   Research Interests (subsection inside About)
    ============================================================ */
 .pub-group h3 {
   font-family: var(--font-serif);
@@ -361,7 +361,7 @@ section h2 {
 }
 
 /* ============================================================
-   响应式
+   Responsive
    ============================================================ */
 @media (max-width: 900px) {
   .page-shell {

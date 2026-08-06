@@ -1,4 +1,4 @@
-// 点击 Email 按钮复制邮箱地址到剪贴板
+// Copy email to clipboard when the Email button is clicked
 const emailBtn = document.querySelector(".email-copy");
 if (emailBtn) {
   emailBtn.addEventListener("click", async () => {
@@ -25,7 +25,7 @@ if (emailBtn) {
   });
 }
 
-// 移动端导航折叠
+// Mobile nav toggle
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
 
@@ -37,7 +37,7 @@ navLinks.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => navLinks.classList.remove("open"));
 });
 
-// 滚动时高亮当前所在分区对应的导航项
+// Highlight the current section's nav link while scrolling
 const sections = document.querySelectorAll("main section[id]");
 const navItems = document.querySelectorAll(".nav-links a");
 
