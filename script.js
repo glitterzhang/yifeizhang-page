@@ -37,6 +37,38 @@ navLinks.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => navLinks.classList.remove("open"));
 });
 
+// Expand/collapse the three-line abstract previews
+document.querySelectorAll(".paper-abstract").forEach((block) => {
+  const text = block.querySelector(".abstract-text");
+  const toggle = block.querySelector(".abstract-toggle");
+  if (!text || !toggle) return;
+
+  // Nothing to expand if the abstract already fits inside the clamp.
+  // Only measurable while collapsed, since expanding removes the clamp.
+  if (!block.classList.contains("open") && text.scrollHeight <= text.clientHeight + 1) {
+    toggle.hidden = true;
+    return;
+  }
+
+  toggle.addEventListener("click", () => {
+    const open = block.classList.toggle("open");
+    toggle.textContent = open ? "Show less" : "Show more";
+  });
+});
+
+// Hide a paper figure whose image is absent, so the layout never shows a broken icon
+document.querySelectorAll(".paper-figure img").forEach((img) => {
+  const hide = () => {
+    const figure = img.closest(".paper-figure");
+    figure.classList.add("is-missing");
+    // drop the wrapper too if the figure was the only thing in it
+    const detail = figure.closest(".paper-detail");
+    if (detail && !detail.querySelector(".paper-abstract")) detail.hidden = true;
+  };
+  if (img.complete && img.naturalWidth === 0) hide();
+  img.addEventListener("error", hide);
+});
+
 // Highlight the current section's nav link while scrolling
 const sections = document.querySelectorAll("main section[id]");
 const navItems = document.querySelectorAll(".nav-links a");

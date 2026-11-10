@@ -382,12 +382,108 @@ section h2 {
   margin: 0 0 0.3rem;
   line-height: 1.4;
 }
+.news-authors {
+  font-family: var(--font-sans);
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin: 0 0 0.25rem;
+}
+/* the site owner's own name, emphasised within an author list */
+.news-authors .me {
+  color: var(--text);
+  font-weight: 600;
+}
 .news-venue {
   font-family: var(--font-serif);
   font-style: italic;
   color: var(--muted);
   font-size: 0.92rem;
   margin: 0;
+}
+
+/* ------------------------------------------------------------
+   Paper detail: key figure beside a collapsed abstract
+   ------------------------------------------------------------ */
+.paper-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 0.7rem;
+}
+
+.paper-figure {
+  flex: 0 0 190px;
+  margin: 0;
+}
+.paper-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg-alt);
+}
+.paper-figure a:hover img {
+  border-color: var(--accent);
+}
+.paper-figure figcaption {
+  font-size: 0.74rem;
+  line-height: 1.35;
+  color: var(--muted);
+  margin-top: 0.3rem;
+}
+/* script.js adds this when the figure file is missing or fails to load */
+.paper-figure.is-missing {
+  display: none;
+}
+
+.paper-abstract {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.abstract-text {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+}
+/* collapsed: clamp to three lines, browser appends the ellipsis */
+.paper-abstract:not(.open) .abstract-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.abstract-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-top: 0.3rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--accent);
+  cursor: pointer;
+}
+.abstract-toggle:hover {
+  text-decoration: underline;
+}
+/* script.js hides this when the abstract already fits in three lines */
+.abstract-toggle[hidden] {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .paper-detail {
+    flex-direction: column;
+  }
+  .paper-figure {
+    flex-basis: auto;
+    width: 100%;
+    max-width: 260px;
+  }
 }
 
 /* ============================================================
